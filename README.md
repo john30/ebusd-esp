@@ -8,11 +8,20 @@ In order to flash the firmware to the ESP board, you need a tool like [NodeMCU F
 
 Using that tool, simply flash the binary from the [dist folder](https://github.com/john30/ebusd-esp/tree/master/dist) to the board at address 0x0000.
 
+For the NodeMCU Flasher, first pick the file and set the address to 0x0000:  
+![pick file](flashco.png)
+
+Then adjust the transfer settings:  
+![transfer](flashad.png)
+
+And finally, start the upload by pressing Flash:  
+![flash](flashop.png)
+
 ## Configuration
 The firmware can be configured using the serial link, for Wemos D1 mini using the onboard USB serial converter. Simply connect with e.g. Putty to the COM port after connecting the board to your computer and you will see the following configuration options:
 
 ```
-Welcome to eBUS adapter 2.0, build 20171020
+Welcome to eBUS adapter 2.0, build 20171022
 ebusd port: udp:0.0.0.0:10000
 Entering configuration mode.
 Chip ID: ********
@@ -26,7 +35,7 @@ Configuration:
  4. ebusd TCP/UDP mode: UDP
  5. ebusd UDP port: 10000
  6. ebusd RX+TX PINs: swapped D8+D7 (GPIO13+15)
-#7. Management TCP port: 9999
+ 7. Management TCP port: 9999
  8. LED PINs: RX:D5, TX:D0
  9. Initial PIN direction: all input
 
