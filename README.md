@@ -50,3 +50,5 @@ Enter your choice:
 ```
 
 By entering one of the characters at the start of each configuration line and submitting by pressing ENTER, you can change the corresponding configuration item or initiate the action behind it.
+
+Note: the management TCP port is not fully implemented yet. Currently it only answers to HTTP requests with a simple text line. This is subject to be enhanced in future.
