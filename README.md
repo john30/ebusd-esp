@@ -26,7 +26,7 @@ Simply connect with e.g. Putty to the COM port after connecting the board to you
 
 ```
 Welcome to eBUS adapter 2.0, build 20171210
-Configured as WIFI access point EBUS with password ebus
+Configured as WIFI access point EBUS without password.
 For configuration with web browser, connect to this WIFI and open http://192.168.4.1/
 Entering configuration mode.
 Chip ID: ********
@@ -58,9 +58,13 @@ Enter your choice:
 By entering one of the characters at the start of each configuration line and submitting by pressing ENTER, you can change the corresponding configuration item or initiate the action behind it.
 
 ### Configuration with HTML frontend
-After flashing, the device acts as an WIFI access point with SSID "EBUS" and password "ebus" and IP address "192.168.4.1".
+After flashing, the device acts as an WIFI access point with SSID "EBUS", no password, and IP address "192.168.4.1".
 
 The management TCP port is setup by default for port 80 (HTTP). By entering the IP address of the device in a web browser, the main configuration settings can be changed similar to the those of the serial link interface.
 
 Use "Check & Update" to check your input and if no error message appeared, simple press "Save & Reset" to save the changes and start it.
+
+
+## Forced reset
+If a factory reset is desired and cannot be initiated by serial connection, simply connect the Wemos pins D0 and 3V3 during boot and it will start in WIFI access point again with a blank configuration.
 
