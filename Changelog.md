@@ -1,6 +1,6 @@
 # build 20171225
 
-* set hostname to "ebus-<chipid-hex>"
+* set hostname to `"ebus-<chipid-hex>"`
 * added hostname to serial and HTML output
 * always call EEPROM.begin and added 1 second delay before accessing EEPROM
 * let LED flash 5 times on hard reset
