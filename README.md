@@ -61,7 +61,9 @@ By entering one of the characters at the start of each configuration line and su
 ### Configuration with HTML frontend
 After flashing, the device acts as an WIFI access point with SSID "EBUS", no password, and IP address "192.168.4.1".
 
-The management TCP port is setup by default for port 80 (HTTP). By entering the IP address of the device in a web browser, the main configuration settings can be changed similar to the those of the serial link interface.
+The management TCP port is setup by default for port 80 (HTTP). By entering the IP address of the device in a web browser, the main configuration settings can be changed similar to those of the serial link interface (not all options are available though):
+
+![webconfig](webcfg.png)
 
 Use "Check & Update" to check your input and if no error message appeared, simple press "Save & Reset" to save the changes and start it.
 
