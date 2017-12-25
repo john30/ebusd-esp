@@ -25,24 +25,25 @@ The firmware can be configured with a simple HTML frontend or by using the seria
 Simply connect with e.g. Putty to the COM port after connecting the board to your computer and you will see the following configuration options:
 
 ```
-Welcome to eBUS adapter 2.0, build 20171210
+Welcome to eBUS adapter 2.0, build 20171225
 Configured as WIFI access point EBUS without password.
 For configuration with web browser, connect to this WIFI and open http://192.168.4.1/
 Entering configuration mode.
 Chip ID: ********
 CPU frequency: 80
-Free heap: 37664
+Free heap: 37648
+Hostname: ebus-******
 
 
 Configuration (new):
  1. WIFI SSID: EBUS
- 2. WIFI secret: ebus
+ 2. WIFI secret:
  3. WIFI IP address: DHCP
- 4. ebusd TCP/UDP mode: UDP
- 5. ebusd UDP port: 9999
+ 4. ebusd TCP/UDP mode: TCP
+ 5. ebusd TCP port: 9999
  6. ebusd RX+TX PINs: direct RX+TX (GPIO3+1)
  7. Management TCP port: 80
- 8. LED PINs: RX:D5, TX:D6
+ 8. LED PINs: RX:disabled, TX:disabled
  9. Initial PIN direction: D4:H
 
  d. Set current PIN direction: D4:H
@@ -52,8 +53,7 @@ Configuration (new):
  r. Reboot (without saving)
  0. Save configuration and reboot
 
-Enter your choice:
-```
+Enter your choice: ```
 
 By entering one of the characters at the start of each configuration line and submitting by pressing ENTER, you can change the corresponding configuration item or initiate the action behind it.
 
