@@ -58,14 +58,16 @@ Enter your choice:
 
 By entering one of the characters at the start of each configuration line and submitting by pressing ENTER, you can change the corresponding configuration item or initiate the action behind it.
 
+Once you have entered the desired data and verified their correctness, press "0" for saving the configuration and rebooting the device.
+
 ### Configuration with HTML frontend
 After flashing, the device acts as an WIFI access point with SSID "EBUS", no password, and IP address "192.168.4.1".
 
 The management TCP port is setup by default for port 80 (HTTP). By entering the IP address of the device in a web browser, the main configuration settings can be changed similar to those of the serial link interface (not all options are available though):
 
-![webconfig](webcfg.png)
+[![webconfig](webcfg.png)](http://129.168.4.1/)
 
-Use "Check & Update" to check your input and if no error message appeared, simple press "Save & Reset" to save the changes and start it.
+Use "Check & Update" to check your input and if no error message appeared and after you have verified the correctness of the values, simply press "Save & Reset" to save the changes and reboot the device.
 
 
 ## Forced reset
