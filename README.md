@@ -53,7 +53,8 @@ Configuration (new):
  r. Reboot (without saving)
  0. Save configuration and reboot
 
-Enter your choice: ```
+Enter your choice: 
+```
 
 By entering one of the characters at the start of each configuration line and submitting by pressing ENTER, you can change the corresponding configuration item or initiate the action behind it.
 
@@ -68,3 +69,11 @@ Use "Check & Update" to check your input and if no error message appeared, simpl
 ## Forced reset
 If a factory reset is desired and cannot be initiated by serial connection, simply connect the Wemos pins D0 and 3V3 during boot and it will start in WIFI access point again with a blank configuration.
 
+
+## LED
+The onboard LED of the Wemos D1 Mini is used to give some feedback about the current state:
+- After reset, it blinks two times slowly to inidicate it was (re-)started.
+- When the WIFI connection was successfully established, it is switched on for around 10 seconds, until:
+- When an ebusd instance has connected successfully to the TCP/UDP port and there is a steady eBUS signal, then the LED is turned on permanently.
+
+If anything goes wrong during these steps, the LED will turn off. So everything is fine only if the LED is on permanently.
