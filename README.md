@@ -65,7 +65,7 @@ After flashing, the device acts as an WIFI access point with SSID "EBUS", no pas
 
 The management TCP port is setup by default for port 80 (HTTP). By entering the IP address of the device in a web browser, the main configuration settings can be changed similar to those of the serial link interface (not all options are available though):
 
-[![webconfig](webcfg.png)](http://129.168.4.1/)
+[![webconfig](webcfg.png)](http://192.168.4.1/)
 
 Use "Check & Update" to check your input and if no error message appeared and after you have verified the correctness of the values, simply press "Save & Reset" to save the changes and reboot the device.
 
