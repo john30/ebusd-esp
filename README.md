@@ -22,7 +22,7 @@ And finally, start the upload by pressing Flash:
 The firmware can be configured with a simple HTML frontend or by using the serial link, for Wemos D1 mini using the onboard USB serial converter.
 
 ### Configuration with serial link
-Simply connect with e.g. Putty to the COM port after connecting the board to your computer and you will see the following configuration options:
+Simply connect with e.g. Putty to the COM port at 115200 Baud (8N1) after connecting the board to your computer and you will see the following configuration options:
 
 ```
 Welcome to eBUS adapter 2.0, build 20171225
