@@ -1,5 +1,9 @@
 # ebusd-esp
-Firmware for ESP8266 allowing eBUS communication for ebusd
+Firmware for ESP8266 allowing eBUS communication for ebusd with lowest possible latency.
+
+## History
+For a history of version and changes made therein, see the [change log](Changelog.md).
+
 
 ## Flashing
 First of all, you need to flash the firmware to the ESP board. Currently, only Wemos D1 mini boards are supported, but others might work as well.
@@ -69,10 +73,6 @@ The management TCP port is setup by default for port 80 (HTTP). By entering the 
 [![webconfig](webcfg.png)](http://192.168.4.1/)
 
 Use "Check & Update" to check your input and if no error message appeared and after you have verified the correctness of the values, simply press "Save & Reset" to save the changes and reboot the device.
-
-
-## Forced reset
-If a factory reset is desired and cannot be initiated by serial connection, simply connect the Wemos pins D0 and 3V3 during boot and it will start in WIFI access point again with a blank configuration.
 
 
 ## LED
