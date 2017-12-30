@@ -25,7 +25,7 @@ The firmware can be configured with a simple HTML frontend or by using the seria
 Simply connect with e.g. Putty to the COM port at 115200 Baud (8N1) after connecting the board to your computer and you will see the following configuration options:
 
 ```
-Welcome to eBUS adapter 2.0, build 20171225
+Welcome to eBUS adapter 2.0, build 20171230
 Configured as WIFI access point EBUS without password.
 For configuration with web browser, connect to this WIFI and open http://192.168.4.1/
 Entering configuration mode.
@@ -49,7 +49,8 @@ Configuration (new):
  d. Set current PIN direction: D4:H
  t. Toggle current output PIN
  e. Dump EEPROM content
- f. Factory reset (F for hard reset)
+ f. Load factory settings
+ F. Factory reset (i.e. erase EEPROM)
  r. Reboot (without saving)
  0. Save configuration and reboot
 
@@ -76,8 +77,10 @@ If a factory reset is desired and cannot be initiated by serial connection, simp
 
 ## LED
 The onboard LED of the Wemos D1 Mini is used to give some feedback about the current state:
-- After reset, it blinks two times slowly to inidicate it was (re-)started.
-- When the WIFI connection was successfully established, it is switched on for around 10 seconds, until:
-- When an ebusd instance has connected successfully to the TCP/UDP port and there is a steady eBUS signal, then the LED is turned on permanently.
+- After reset, it blinks two times slowly to indicate it was (re-)started.
+- While establishing the WIFI connection, it dims down from on several times up to 5 seconds.
+- When the WIFI connection was successfully established, it is switched off for around 5 seconds.
+  During that time (when no eBUS signal was detected), sending any key to the serial port makes the firmware go to serial configuration mode.
+- When an ebusd instance has connected successfully to the TCP/UDP port and there is a steady eBUS signal, then the LED is turned on permanently either at full brightness (if ebusd regularly sends something to the eBUS) or less brightness (if ebusd does not write to the eBUS).
 
-If anything goes wrong during these steps, the LED will turn off. So everything is fine only if the LED is on permanently.
+If anything goes wrong during these steps, the LED will turn off. So everything is fine only if the LED is on permanently at full or less brightness.

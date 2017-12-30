@@ -1,3 +1,17 @@
+# build 20171230
+
+* extended maximum WIFI secret length to 63 chars
+* use a password field for the WIFI secret in HTML
+* encrypt WIFI secret in EEPROM
+* only wait 5 seconds for WIFI connection after reboot and retry infinitely
+* dim LED while connecting WIFI
+* validate SSID and WIFI secret length
+* removed forced reset (by setting D0=HIGH during boot) again
+* made "f" load factory defaults and only "F" erase the whole EEPROM
+* track if ebusd is connected and active/inactive
+* delayed background task handling to after second consecutive SYN symbol
+
+
 # build 20171225
 
 * set hostname to `"ebus-<chipid-hex>"`
