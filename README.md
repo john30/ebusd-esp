@@ -34,18 +34,17 @@ Configured as WIFI access point EBUS without password.
 For configuration with web browser, connect to this WIFI and open http://192.168.4.1/
 Entering configuration mode.
 Chip ID: ********
-CPU frequency: 80
-Free heap: 37648
 Hostname: ebus-******
 
+ebusd device string: 192.168.4.1:9999
 
 Configuration (new):
  1. WIFI SSID: EBUS
  2. WIFI secret:
  3. WIFI IP address: DHCP
- 4. ebusd TCP/UDP mode: TCP
+ 4. ebusd TCP/UDP/enhanced protocol: TCP
  5. ebusd TCP port: 9999
- 6. ebusd RX+TX PINs: direct RX+TX (GPIO3+1)
+ 6. eBUS RX+TX PINs: direct RX+TX (GPIO3+1)
  7. Management TCP port: 80
  8. LED PINs: RX:disabled, TX:disabled
  9. Initial PIN direction: D4:H
@@ -76,7 +75,14 @@ Use "Check & Update" to check your input and if no error message appeared and af
 
 
 ## LED
-The onboard LED of the Wemos D1 Mini is used to give some feedback about the current state (but not if D4 PIN is used for eBUS connection!):
+The onboard LED of the Wemos D1 Mini is used to give some feedback about the current state.
+
+During reset, it usually blinks shortly as some data is sent on the Wemos debug output.
+
+The LED status after the reset depends on the selected eBUS RX+TX PIN mode.
+
+### LED in hardware UART (direct or swapped) and mixed RX + software D2 eBUS RX+TX PIN mode
+When in one of these eBUS RX+TX PIN modes, the LED provides the following feedback:
 - After reset, it blinks two times slowly to indicate it was (re-)started.
 - While establishing the WIFI connection, it dims down from on several times up to 5 seconds.
 - When the WIFI connection was successfully established, it is switched off for around 5 seconds.
@@ -84,3 +90,6 @@ The onboard LED of the Wemos D1 Mini is used to give some feedback about the cur
 - When an ebusd instance has connected successfully to the TCP/UDP port and there is a steady eBUS signal, then the LED is turned on permanently either at full brightness (if ebusd regularly sends something to the eBUS) or less brightness (if ebusd does not write to the eBUS).
 
 If anything goes wrong during these steps, the LED will turn off. So everything is fine only if the LED is on permanently at full or less brightness.
+
+### LED in mixed software D1 + TX1 D4 eBUS RX+TX PIN mode
+When the RX+TX PIN mode is set to mixed software D1 + TX1 D4 mode, the onboard LED will blink when something is sent actively from the Wemos on the eBUS only.
