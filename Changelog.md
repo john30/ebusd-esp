@@ -1,3 +1,10 @@
+# build 20180915
+
+* added hybrid software/hardware UART modes (with initial bus connect check disabled): D1(recv)+D4(TX1), RX+D2(send)
+* added enhanced ebusd protocol mode with arbitration done by Wemos
+* hide WIFI secret length in serial configuration
+
+
 # build 20171230
 
 * extended maximum WIFI secret length to 63 chars
