@@ -72,11 +72,13 @@ The HTTP TCP port is set to port 80 by default. By entering the IP address of th
 [![Web Status](web.png)](http://192.168.4.1/)
 
 The main configuration settings can be changed similarly to the serial link interface (not all options are available though) by clicking on [Configuration](http://192.168.4.1/config):
+
 [![Web Configuration](webcfg.png)](http://192.168.4.1/config)
 
 Use "Check & Update" to check your input and if no error message appeared and after you have verified the correctness of the values, simply press "Save & Reset" to save the changes and reboot the device.
 
 It is also possible to change PINs directly on the [PINs](http://192.168.4.1/pins) page:
+
 [![Web PINs](webpins.png)](http://192.168.4.1/pins)
 
 If you want to change the initial PIN settings, just use the last column for that and afterwards go to the [Configuration](http://192.168.4.1/config) page and press "Save & Reset" to save the changes and reboot the device.
