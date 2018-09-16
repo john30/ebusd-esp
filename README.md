@@ -29,7 +29,7 @@ The firmware can be configured with a simple HTML frontend or by using the seria
 Simply connect with e.g. Putty to the COM port at 115200 Baud (8N1) after connecting the board to your computer and you will see the following configuration options:
 
 ```
-Welcome to eBUS adapter 2.0, build 20180915
+Welcome to eBUS adapter 2.0, build 20180916
 Configured as WIFI access point EBUS without password.
 For configuration with web browser, connect to this WIFI and open http://192.168.4.1/
 Entering configuration mode.
@@ -42,10 +42,10 @@ Configuration (new):
  1. WIFI SSID: EBUS
  2. WIFI secret:
  3. WIFI IP address: DHCP
- 4. ebusd TCP/UDP/enhanced protocol: TCP
- 5. ebusd TCP port: 9999
+ 4. WIFI hostname: ebus-******
+ 5. ebusd connection: TCP on port 9999
  6. eBUS RX+TX PINs: direct RX+TX (GPIO3+1)
- 7. Management TCP port: 80
+ 7. HTTP TCP port: 80
  8. LED PINs: RX:disabled, TX:disabled
  9. Initial PIN direction: D4:H
 
@@ -57,7 +57,7 @@ Configuration (new):
  r. Reboot (without saving)
  0. Save configuration and reboot
 
-Enter your choice: 
+Enter your choice:
 ```
 
 By entering one of the characters at the start of each configuration line and submitting by pressing ENTER, you can change the corresponding configuration item or initiate the action behind it.
@@ -67,11 +67,19 @@ Once you have entered the desired data and verified their correctness, press "0"
 ### Configuration with HTML frontend
 After flashing, the device acts as an WIFI access point with SSID "EBUS", no password, and IP address "192.168.4.1".
 
-The management TCP port is setup by default for port 80 (HTTP). By entering the IP address of the device in a web browser, the main configuration settings can be changed similar to those of the serial link interface (not all options are available though):
+The HTTP TCP port is set to port 80 by default. By entering the IP address of the device in a web browser, a status page like this is shown:
 
-[![webconfig](webcfg.png)](http://192.168.4.1/)
+[![Web Status](web.png)](http://192.168.4.1/)
+
+The main configuration settings can be changed similarly to the serial link interface (not all options are available though) by clicking on [Configuration](http://192.168.4.1/config):
+[![Web Configuration](webcfg.png)](http://192.168.4.1/config)
 
 Use "Check & Update" to check your input and if no error message appeared and after you have verified the correctness of the values, simply press "Save & Reset" to save the changes and reboot the device.
+
+It is also possible to change PINs directly on the [PINs](http://192.168.4.1/pins) page:
+[![Web PINs](webpins.png)](http://192.168.4.1/pins)
+
+If you want to change the initial PIN settings, just use the last column for that and afterwards go to the [Configuration](http://192.168.4.1/config) page and press "Save & Reset" to save the changes and reboot the device.
 
 
 ## LED
@@ -93,3 +101,9 @@ If anything goes wrong during these steps, the LED will turn off. So everything 
 
 ### LED in mixed software D1 + TX1 D4 eBUS RX+TX PIN mode
 When the RX+TX PIN mode is set to mixed software D1 + TX1 D4 mode, the onboard LED will blink when something is sent actively from the Wemos on the eBUS only.
+
+
+## PINs
+If the HTTP port is configured, you can use the "/pin" URL for changing the value of an output PIN or read the current status of all PINs in JSON.
+
+E.g. in order to set D0 (GPIO16) to LOW, you could use the URL [http://192.168.4.1/pin?pin=0&mode=l](http://192.168.4.1/pin?pin=0&mode=l), and using [http://192.168.4.1/pin?pin=0&mode=h](http://192.168.4.1/pin?pin=0&mode=h) for HIGH.

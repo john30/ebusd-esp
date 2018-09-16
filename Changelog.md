@@ -1,3 +1,12 @@
+# build 20180916
+
+* fix for initial port settings fixed to input for D5-D8
+* made hostname configurable
+* nicer serial configuration
+* made PINs configurable via HTML and added auto refresh
+* added JSON API for PINs on /pin URL
+
+
 # build 20180915
 
 * added hybrid software/hardware UART modes (with initial bus connect check disabled): D1(recv)+D4(TX1), RX+D2(send)
