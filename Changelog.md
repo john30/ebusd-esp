@@ -1,3 +1,11 @@
+# build 20180922
+
+* added "o" action for eanbling OTA and manual firmware upload
+* only show connection string and reveal current DHCP address when WIFI client is connected
+* added "c" action for re-connecting WIFI
+* updated Arduino core from 2.4.0 to 2.4.2
+
+
 # build 20180916
 
 * fix for initial port settings fixed to input for D5-D8
