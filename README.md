@@ -29,7 +29,7 @@ The firmware can be configured with a simple HTML frontend or by using the seria
 Simply connect with e.g. Putty to the COM port at 115200 Baud (8N1) after connecting the board to your computer and you will see the following configuration options:
 
 ```
-Welcome to eBUS adapter 2.0, build 20180922
+Welcome to eBUS adapter 2.0, build 20180923
 Configured as WIFI access point EBUS without password.
 For configuration with web browser, connect to this WIFI and open http://192.168.4.1/
 Entering configuration mode.
@@ -41,28 +41,30 @@ Configuration (new):
  2. WIFI secret:
  3. WIFI IP address: DHCP (not connected)
  4. WIFI hostname: ebus-******
- 5. ebusd connection: TCP on port 9999
- 6. eBUS RX+TX PINs: direct RX+TX (GPIO3+1)
+ 5. eBUS RX+TX PINs: direct RX+TX (GPIO3+1)
+ 6. ebusd connection: TCP on port 9999
  7. HTTP TCP port: 80
  8. LED PINs: RX:disabled, TX:disabled
- 9. Initial PIN direction: D4:H
+ 9. Initial PINs: D4:H
 
- d. Set current PIN direction: D4:H
+ p. Set current PINs: D4:H
  t. Toggle current output PIN
  c. Connect WIFI
  e. Dump EEPROM content
  f. Load factory settings
  F. Factory reset (i.e. erase EEPROM)
- o. OTA active: starting
+ o. OTA enabled: waiting
  r. Reboot (without saving)
  0. Save configuration and reboot
 
 Enter your choice:
 ```
 
-By entering one of the characters at the start of each configuration line and submitting by pressing ENTER, you can change the corresponding configuration item or initiate the action behind it.
+By entering one of the characters at the start of each configuration line and pressing ENTER, you can change the corresponding configuration item or initiate the action behind it.
 
 Once you have entered the desired data and verified their correctness, press "0" for saving the configuration and rebooting the device.
+
+For WIFI connection, you can try the connection (after SSID and secret were set) by using "c" and ENTER.
 
 ### Configuration with HTML frontend
 After flashing, the device acts as an WIFI access point with SSID "EBUS", no password, and IP address "192.168.4.1".
@@ -113,6 +115,6 @@ E.g. in order to set D0 (GPIO16) to LOW, you could use the URL [http://192.168.4
 
 ## Firmware update
 
-In order to update the firmware after the device was flashed initially as stated above, you can use the HTML frontend or the serial frontend for activating OTA.
+In order to update the firmware (after the device was flashed initially as stated above), you can use the HTML frontend or the serial frontend for activating OTA.
 
 Using the HTML frontend, you can also upload a new firmware directly after enabling OTA in the configuration page.

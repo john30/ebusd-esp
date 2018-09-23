@@ -1,3 +1,14 @@
+# build 20180923
+
+* modernized HTML UI
+* allow direct serial ebusd connection in mode "mixed software D1 + TX1 D4 (GPIO5+2)"
+* deny API pin update for non-output pins
+* show internal pullup/down in HTML pins page
+* added factory reset buttons to HTML config page
+* fix for HTML protocol selector
+* better check for pressed return key during startup
+
+
 # build 20180922
 
 * added "o" action for eanbling OTA and manual firmware upload
