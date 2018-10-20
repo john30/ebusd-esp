@@ -1,3 +1,9 @@
+# build 20181020
+
+* built with Arduino using core 2.4.0 instead of PlatformIO using core 2.4.2
+* added Wemos D1 mini Lite variant
+
+
 # build 20180923
 
 * modernized HTML UI
