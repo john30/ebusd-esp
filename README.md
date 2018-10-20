@@ -6,12 +6,14 @@ For a history of version and changes made therein, see the [change log](Changelo
 
 
 ## Flashing
-First of all, you need to flash the firmware to the ESP board. Currently, only Wemos D1 mini boards are supported, but others might work as well.
+First of all, you need to flash the firmware to the ESP board. Currently, only [Wemos D1 mini](https://wiki.wemos.cc/products:d1:d1_mini) and [Wemos D1 mini Lite](https://wiki.wemos.cc/products:d1:d1_mini_lite) boards are supported, but others might work as well.
 
-In order to flash the firmware to the ESP board, you need a tool like [NodeMCU Flasher](https://nodemcu.readthedocs.io/en/master/en/flash/#nodemcu-flasher) or [esptool.py](https://nodemcu.readthedocs.io/en/master/en/flash/#esptoolpy).
+In order to flash the firmware to the ESP board, you need a tool like [NodeMCU Flasher](https://nodemcu.readthedocs.io/en/master/en/flash/#nodemcu-flasher), [esptool.py](https://nodemcu.readthedocs.io/en/master/en/flash/#esptoolpy), or [esptool](https://github.com/igrr/esptool-ck/releases).
+
 
 Using that tool, simply flash the binary from the [dist folder](https://github.com/john30/ebusd-esp/tree/master/dist) to the board at address 0x0000.
 
+### Flashing with NodeMCU Flasher
 For the NodeMCU Flasher, first pick the file and set the address to 0x0000:  
 ![pick file](flashco.png)
 
@@ -21,6 +23,10 @@ Then adjust the transfer settings:
 And finally, start the upload by pressing Flash:  
 ![flash](flashop.png)
 
+### Flashing with esptool
+For the esptool flasher, just run it on command line like this (replacing COM4 with the corresponding port on Windows or the right serial device like /dev/ttyUSB0 under Linux):  
+`esptool -cp COM4 -cd nodemcu -cb 921600 -cf ebus-v2_d1mini.bin`
+
 
 ## Configuration
 The firmware can be configured with a simple HTML frontend or by using the serial link, for Wemos D1 mini using the onboard USB serial converter.
@@ -29,7 +35,7 @@ The firmware can be configured with a simple HTML frontend or by using the seria
 Simply connect with e.g. Putty to the COM port at 115200 Baud (8N1) after connecting the board to your computer and you will see the following configuration options:
 
 ```
-Welcome to eBUS adapter 2.0, build 20180923
+Welcome to eBUS adapter 2.0, build 20181020
 Configured as WIFI access point EBUS without password.
 For configuration with web browser, connect to this WIFI and open http://192.168.4.1/
 Entering configuration mode.
