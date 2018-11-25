@@ -35,7 +35,7 @@ The firmware can be configured with a simple HTML frontend or by using the seria
 Simply connect with e.g. Putty to the COM port at 115200 Baud (8N1) after connecting the board to your computer and you will see the following configuration options:
 
 ```
-Welcome to eBUS adapter 2.0, build 20181020
+Welcome to eBUS adapter 2.0, build 20181125
 Configured as WIFI access point EBUS without password.
 For configuration with web browser, connect to this WIFI and open http://192.168.4.1/
 Entering configuration mode.

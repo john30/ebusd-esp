@@ -1,3 +1,8 @@
+# build 20181125
+
+* fixed reboot loop after starting access point
+
+
 # build 20181020
 
 * built with Arduino using core 2.4.0 instead of PlatformIO using core 2.4.2
