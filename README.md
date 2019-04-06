@@ -35,7 +35,7 @@ The firmware can be configured with a simple HTML frontend or by using the seria
 Simply connect with e.g. Putty to the COM port at 115200 Baud (8N1) after connecting the board to your computer and you will see the following configuration options:
 
 ```
-Welcome to eBUS adapter 2.0, build 20181125
+Welcome to eBUS adapter 2.0, build 20190406
 Configured as WIFI access point EBUS without password.
 For configuration with web browser, connect to this WIFI and open http://192.168.4.1/
 Entering configuration mode.
@@ -114,7 +114,7 @@ When the RX+TX PIN mode is set to mixed software D1 + TX1 D4 mode, the onboard L
 
 
 ## PINs
-If the HTTP port is configured, you can use the "/pin" URL for changing the value of an output PIN or read the current status of all PINs in JSON format.
+If the HTTP port is configured, you can use the "/pin" URL for changing the value of an output PIN or reading the current status of all PINs in JSON format including the analog input PIN.
 
 E.g. in order to set D0 (GPIO16) to LOW, you could use the URL [http://192.168.4.1/pin?pin=0&mode=l](http://192.168.4.1/pin?pin=0&mode=l), and using [http://192.168.4.1/pin?pin=0&mode=h](http://192.168.4.1/pin?pin=0&mode=h) for HIGH.
 

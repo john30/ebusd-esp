@@ -1,3 +1,10 @@
+# build 20190406
+
+* added RSSI information
+* updated Arduino core from 2.4.2 to 2.5.0 and SDK to 3.0.0
+* added analog input PIN with value and voltage
+
+
 # build 20181125
 
 * fixed reboot loop after starting access point
