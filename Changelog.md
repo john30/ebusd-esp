@@ -1,7 +1,13 @@
+# build 20190407
+
+* show RSSI in percent as well
+* updated SoftwareSerial to 4.0.0
+
+
 # build 20190406
 
 * added RSSI information
-* updated Arduino core from 2.4.2 to 2.5.0 and SDK to 3.0.0
+* updated Arduino core to 2.5.0 and SDK to 3.0.0
 * added analog input PIN with value and voltage
 
 
