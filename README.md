@@ -8,13 +8,13 @@ For a history of version and changes made therein, see the [change log](Changelo
 ## Flashing
 First of all, you need to flash the firmware to the ESP board. Currently, only [Wemos D1 mini](https://wiki.wemos.cc/products:d1:d1_mini) and [Wemos D1 mini Lite](https://wiki.wemos.cc/products:d1:d1_mini_lite) boards are supported, but others might work as well. A binary for [NodeMcu v1.0](https://github.com/nodemcu/nodemcu-devkit-v1.0) is also available, but was not tested yet.
 
-In order to flash the firmware to the ESP board, you need a tool like [NodeMCU Flasher](https://nodemcu.readthedocs.io/en/master/en/flash/#nodemcu-flasher), [esptool.py](https://nodemcu.readthedocs.io/en/master/en/flash/#esptoolpy), or [esptool](https://github.com/igrr/esptool-ck/releases).
+In order to flash the firmware to the ESP board, you need one of the tools mentioned on [NodeMCU](https://nodemcu.readthedocs.io/en/master/flash/#tool-overview), e.g. (NodeMCU Flasher)[https://github.com/nodemcu/nodemcu-flasher], [esptool.py](https://nodemcu.readthedocs.io/en/master/en/flash/#esptoolpy), or [esptool](https://github.com/igrr/esptool-ck/releases).
 
 
 Using that tool, simply flash the right binary from the [dist folder](https://github.com/john30/ebusd-esp/tree/master/dist) to the ESP board at address 0x0000.
 
 ### Flashing with NodeMCU Flasher
-For the NodeMCU Flasher, first pick the right file for your board from the [dist folder](https://github.com/john30/ebusd-esp/tree/master/dist) and set the address to 0x0000:  
+For the (NodeMCU Flasher)[https://github.com/nodemcu/nodemcu-flasher], first pick the right file for your board from the [dist folder](https://github.com/john30/ebusd-esp/tree/master/dist) and set the address to 0x0000:  
 ![pick file](flashco.png)
 
 Then adjust the transfer settings according to your board (settings for Wemos D1 mini shown):  
@@ -25,7 +25,7 @@ And finally, start the upload by pressing Flash:
 
 ### Flashing with esptool
 For the esptool flasher, just run it on command line like this (replacing COM4 with the corresponding port on Windows or the right serial device like /dev/ttyUSB0 under Linux, and replacing ebus-v2_d1mini.bin with the right filename for your board):  
-`esptool -cp COM4 -cd nodemcu -cb 921600 -cf ebus-v2_d1mini.bin`
+`esptool -cp COM4 -bm dio -cd nodemcu -cb 921600 -cf ebus-v2_d1mini.bin`
 
 
 ## Configuration
