@@ -1,3 +1,13 @@
+# build 20191110
+
+* added support for 1-wire temperature sensors to UI and /sensor URL
+* show initial eBUS signal detection result
+* updated Arduino core to 2.6.0
+* updated SoftwareSerial to 5.4.0
+* added more time for WIFI connect
+* added keepalive to eBUS TCP port
+
+
 # build 20190407
 
 * show RSSI in percent as well
@@ -7,7 +17,7 @@
 # build 20190406
 
 * added RSSI information
-* updated Arduino core to 2.5.0 and SDK to 3.0.0
+* updated Arduino core to 2.5.0
 * added analog input PIN with value and voltage
 
 
