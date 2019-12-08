@@ -1,3 +1,9 @@
+# build 20191208
+* potential fix for DHCP sometimes not working
+* updated to new enhanced ebusd protocol
+* updated Arduino core to 2.6.2 and SoftwareSerial to 6.3.0
+
+
 # build 20191110
 
 * added support for 1-wire temperature sensors to UI and /sensor URL
