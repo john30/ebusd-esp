@@ -1,3 +1,7 @@
+# build 20191212
+* fix for setting network mask
+
+
 # build 20191208
 * potential fix for DHCP sometimes not working
 * updated to new enhanced ebusd protocol
