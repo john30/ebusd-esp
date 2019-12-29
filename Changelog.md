@@ -1,3 +1,10 @@
+# build 20191229
+* fix for SoftwareSerial initialization (introduced in 20191208)
+* updated Arduino core to 2.6.3 and SoftwareSerial to 6.6.1
+* built with PlatformIO instead of Arduino
+* sharpen keepalive options for eBUS TCP port
+
+
 # build 20191212
 * fix for setting network mask
 
