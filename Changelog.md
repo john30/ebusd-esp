@@ -1,3 +1,8 @@
+# build 20200412
+* set WIFI to mode N
+* updated SoftwareSerial to 6.8.1
+
+
 # build 20191229
 * fix for SoftwareSerial initialization (introduced in 20191208)
 * updated Arduino core to 2.6.3 and SoftwareSerial to 6.6.1
