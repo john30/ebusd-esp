@@ -1,9 +1,16 @@
+# build 20200413
+
+* add ESP32 support (starting with Lolin32)
+
+
 # build 20200412
+
 * set WIFI to mode N
 * updated SoftwareSerial to 6.8.1
 
 
 # build 20191229
+
 * fix for SoftwareSerial initialization (introduced in 20191208)
 * updated Arduino core to 2.6.3 and SoftwareSerial to 6.6.1
 * built with PlatformIO instead of Arduino
@@ -11,10 +18,12 @@
 
 
 # build 20191212
+
 * fix for setting network mask
 
 
 # build 20191208
+
 * potential fix for DHCP sometimes not working
 * updated to new enhanced ebusd protocol
 * updated Arduino core to 2.6.2 and SoftwareSerial to 6.3.0
