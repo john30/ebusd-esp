@@ -1,5 +1,5 @@
 # ebusd-esp
-Firmware for ESP8266 allowing eBUS communication for ebusd with lowest possible latency.
+Firmware for ESP8266 and ESP32 allowing eBUS communication for ebusd with lowest possible latency.
 
 ## History
 For a history of version and changes made therein, see the [change log](Changelog.md).
@@ -7,9 +7,11 @@ For a history of version and changes made therein, see the [change log](Changelo
 
 ## Flashing
 First of all, you need to flash the firmware to the ESP board. Currently, only the following boards are supported:  
-* [Wemos D1 mini](https://wiki.wemos.cc/products:d1:d1_mini)
-* [Wemos D1 mini Lite](https://wiki.wemos.cc/products:d1:d1_mini_lite)
+* [Wemos D1 mini](https://www.wemos.cc/en/latest/d1/d1_mini.html)
+* [Wemos D1 mini Lite](https://www.wemos.cc/en/latest/d1/d1_mini_lite.html)
+* [Wemos D1 mini Pro](https://www.wemos.cc/en/latest/d1/d1_mini_pro.html)
 * [NodeMcu v1.0](https://github.com/nodemcu/nodemcu-devkit-v1.0)
+* [Wemos Lolin32](https://wiki.wemos.cc/products:lolin32)
 
 Other boards might work as well, but were not tested.
 
