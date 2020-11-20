@@ -30,7 +30,7 @@ And finally, start the upload by pressing Flash:
 ![flash](flashop.png)
 
 ### Flashing with esptool
-For the esptool flasher, just run it on command line like this (replacing COM4 with the corresponding port on Windows or the right serial device like /dev/ttyUSB0 under Linux, and replacing ebus-v2_d1mini.bin with the right filename for your board):  
+For the esptool flasher, just run it on command line like this (replacing COM4 with the corresponding port on Windows or the right serial device like /dev/ttyUSB0 under Linux, and replacing ebus-v3_d1mini.bin with the right filename for your board):  
 `esptool -cp COM4 -bm dio -cd nodemcu -cb 921600 -cf ebus-v3_d1mini.bin`
 
 
