@@ -41,7 +41,7 @@ The firmware can be configured with a simple HTML frontend or by using the seria
 Simply connect with e.g. Putty to the COM port at 115200 Baud (8N1) after connecting the board to your computer and you will see the following configuration options:
 
 ```
-Welcome to eBUS adapter 2.0, build 20191208
+Welcome to eBUS adapter 3, build 20201120
 Entering configuration mode.
 Chip ID: ********
 Hostname: ebus-******
@@ -49,10 +49,11 @@ Hostname: ebus-******
 Configuration:
  1. WIFI SSID: EBUS
  2. WIFI secret:
- 3. WIFI IP address: DHCP (not connected)
+ 3. WIFI IP address: DHCP (failed: disconnected, reason: 1)
+ w. WIFI power: normal
  4. WIFI hostname: ebus-******
- 5. eBUS RX+TX PINs: direct RX+TX (GPIO3+1)
- 6. ebusd connection: TCP on port 9999
+ 5. eBUS RX+TX PINs: Adapter 3 RX+TX (GPIO3+1)
+ 6. ebusd connection: enhanced on port 9999
  7. HTTP TCP port: 80
  8. LED PINs: RX:disabled, TX:disabled
  9. Initial PINs: D4:H

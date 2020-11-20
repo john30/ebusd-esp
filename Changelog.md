@@ -1,3 +1,14 @@
+# build 20201120
+
+* updated Arduino core to 2.7.4
+* add support for enhanced UDP mode
+* updated to latest enhanced protocol
+* add support for adapter 3 and set this as default
+* add WIFI high power option
+* wait longer for DHCP lease
+* allow entering config mode when WIFI does not connect
+
+
 # build 20200413
 
 * add ESP32 support (starting with Lolin32)
