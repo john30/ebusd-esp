@@ -1,7 +1,12 @@
+# build 20201122
+
+* fix serial speed for adapter 3 non-enhanced mode
+* fix LED for ESP32 after using PWM
+
+
 # build 20201120
 
 * updated Arduino core to 2.7.4
-* add support for enhanced UDP mode
 * updated to latest enhanced protocol
 * add support for adapter 3 and set this as default
 * add WIFI high power option
