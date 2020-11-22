@@ -2,6 +2,8 @@
 
 * fix serial speed for adapter 3 non-enhanced mode
 * fix LED for ESP32 after using PWM
+* hide adapter 3 ready port on serial and API
+* send enhanced protocol reset after client connection
 
 
 # build 20201120
