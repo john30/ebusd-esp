@@ -10,6 +10,7 @@
 * chore: update SoftwareSerial to 6.13.2
 * chore: add link to firmware download
 * fix: RSSI calculation when not connected
+* feat: announce OTA via mDNS when activated
 
 
 # build 20201122
