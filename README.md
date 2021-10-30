@@ -11,7 +11,7 @@ First of all, you need to flash the firmware to the ESP board. Currently, only t
 * [Wemos D1 mini Lite](https://www.wemos.cc/en/latest/d1/d1_mini_lite.html)
 * [Wemos D1 mini Pro](https://www.wemos.cc/en/latest/d1/d1_mini_pro.html)
 * [NodeMcu v1.0](https://github.com/nodemcu/nodemcu-devkit-v1.0)
-* [Wemos D32](https://www.wemos.cc/en/latest/d32/d32.html) (aka Lolin32)
+* [Wemos D32](https://www.wemos.cc/en/latest/d32/d32.html) (aka Lolin32, see [note on "factory" image below](README.md#flashing-with-esptool))
 
 Other boards might work as well, but were not tested.
 
@@ -41,6 +41,11 @@ For the esptool flasher, just run it on command line like this (replacing COM4 w
 the right serial device like /dev/ttyUSB0 under Linux, and replacing ebus-v3_d1mini.bin with the right filename for your
 board):  
 `esptool -cp COM4 -bm dio -cd nodemcu -cb 921600 -ce -cf ebus-v3_d1mini.bin`
+
+***Note for ESP32 image:***  
+For the ESP32 image, the first flashing of a blank or otherwise differently flashed device has to be done with the image
+having "-factory" as suffix in the name, e.g. [ebus-v3_lolin32_factory.bin](dist/ebus-v3_lolin32_factory.bin). This
+contains all relevant parts to get the device up and running.
 
 
 ## Configuration
