@@ -1,3 +1,17 @@
+# build 20211030
+
+* chore: update Arduino core to 3.0.2
+* fix: for 64 characters in WIFI password
+* fix: for allowed number range in management and ebusd port
+* feat: make phy mode configurable
+* fix: initial signal detection with adapter in enhanced mode
+* feat: ESP erase config when doing factory reset
+* feat: double CPU speed and use high bandwidth LWIP for lower latency
+* chore: update SoftwareSerial to 6.13.2
+* chore: add link to firmware download
+* fix: RSSI calculation when not connected
+
+
 # build 20201122
 
 * fix serial speed for adapter 3 non-enhanced mode
