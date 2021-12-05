@@ -1,3 +1,9 @@
+# build 20211205
+* chore: handle WIFI clients more frequently
+* chore: update SoftwareSerial to 6.13.2
+* chore: use normal CPU speed and normal bandwidth lwip
+
+
 # build 20211030
 
 * chore: update Arduino core to 3.0.2
