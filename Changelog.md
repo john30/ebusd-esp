@@ -1,4 +1,11 @@
+# build 20211225
+
+* chore: show board and flash ID
+* feat: start support for Wemos D1 mini 32 and ESP01
+
+
 # build 20211205
+
 * chore: handle WIFI clients more frequently
 * chore: update SoftwareSerial to 6.13.2
 * chore: use normal CPU speed and normal bandwidth lwip
