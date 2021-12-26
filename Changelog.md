@@ -1,7 +1,9 @@
-# build 20211225
+# build 20211226
 
 * chore: show board and flash ID
 * feat: start support for Wemos D1 mini 32 and ESP01
+* feat: add link to verbose info
+* chore: changed lite+pro file names for clear indication of flash size
 
 
 # build 20211205

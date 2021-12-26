@@ -79,7 +79,7 @@ Simply connect with e.g. Putty to the COM port at 115200 Baud (8N1) after connec
 will see the following configuration options:
 
 ```
-Welcome to eBUS adapter 3, build 20211030
+Welcome to eBUS adapter 3, build 20211226
 Configured as WIFI access point EBUS without password.
 For configuration with web browser, connect to this WIFI and open http://192.168.4.1/
 Entering configuration mode.
@@ -190,3 +190,4 @@ In order to update the firmware (after the device was flashed initially as state
 or the serial frontend for activating OTA.
 
 Using the HTML frontend, you can also upload a new firmware directly after enabling OTA in the configuration page.
+This is not possible for all variants though (e.g. when flash size is too small).
