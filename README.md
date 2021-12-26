@@ -1,17 +1,39 @@
 # ebusd-esp
-Firmware for ESP8266 and ESP32 allowing eBUS communication for ebusd with lowest possible latency.
+Firmware for ESP8266, ESP8285, and ESP32 allowing eBUS communication for ebusd with lowest possible latency.
 
 ## History
 For a history of version and changes made therein, see the [change log](Changelog.md).
 
 
 ## Flashing
-First of all, you need to flash the firmware to the ESP board. Currently, only the following boards are supported:  
-* [Wemos D1 mini](https://www.wemos.cc/en/latest/d1/d1_mini.html)
-* [Wemos D1 mini Lite](https://www.wemos.cc/en/latest/d1/d1_mini_lite.html)
-* [Wemos D1 mini Pro](https://www.wemos.cc/en/latest/d1/d1_mini_pro.html)
-* [NodeMcu v1.0](https://github.com/nodemcu/nodemcu-devkit-v1.0)
-* [Wemos D32](https://www.wemos.cc/en/latest/d32/d32.html) (aka Lolin32, see [note on "factory" image below](README.md#flashing-with-esptool))
+First of all, you need to flash the firmware to the ESP board. Currently, the following boards are supported and
+require flashing the corresponding binary:
+
+* [Wemos D1 mini](https://www.wemos.cc/en/latest/d1/d1_mini.html):  
+  * flash size: 4MB
+  * firmware: [d1mini](dist/d1mini.bin)
+* [Wemos D1 mini Lite](https://www.wemos.cc/en/latest/d1/d1_mini_lite.html):  
+  * flash size: 1MB
+  * firmware: [d1mini_lite_1m](dist/d1mini_lite_1m.bin)
+* [Wemos D1 mini Pro](https://www.wemos.cc/en/latest/d1/d1_mini_pro.html):  
+  * flash size: 16MB
+  * firmware: [d1mini_pro_16m](dist/d1mini_pro_16m.bin)
+  * attention: some boards are sold as "pro" but are actually equipped with 4MB flash only. These need to be flashed
+    with the [d1mini](dist/d1mini.bin) variant instead of the pro!
+* [NodeMcu v1.0](https://github.com/nodemcu/nodemcu-devkit-v1.0):  
+  * flash size: 4MB
+  * firmware: [nodemcu1](dist/nodemcu1.bin)
+* [ESP-01S](http://www.ai-thinker.com/pro_view-60.html):
+  * flash size: 1MB
+  * firmware: [esp01](dist/esp01.bin)
+* [Wemos D32](https://www.wemos.cc/en/latest/d32/d32.html) (aka Lolin32):  
+  * flash size: 4MB
+  * firmware: [lolin32](dist/lolin32.bin)
+  * first time flashing: see [note on "factory" image below](README.md#flashing-with-esptool)
+* [D1 mini 32](https://forum.mhetlive.com/topic/8/mh-et-live-minikit-for-esp32):
+  * flash size: 4MB
+  * firmware: [d1mini32](dist/d1mini32.bin)
+  * first time flashing: see [note on "factory" image below](README.md#flashing-with-esptool)
 
 Other boards might work as well, but were not tested.
 
@@ -42,9 +64,9 @@ the right serial device like /dev/ttyUSB0 under Linux, and replacing ebus-v3_d1m
 board):  
 `esptool -cp COM4 -bm dio -cd nodemcu -cb 921600 -ce -cf ebus-v3_d1mini.bin`
 
-***Note for ESP32 image:***  
-For the ESP32 image, the first flashing of a blank or otherwise differently flashed device has to be done with the image
-having "-factory" as suffix in the name, e.g. [ebus-v3_lolin32_factory.bin](dist/ebus-v3_lolin32_factory.bin). This
+***Note for ESP32 images:***  
+For all ESP32 images, the first flashing of a blank or otherwise differently flashed device has to be done with the image
+having "_factory" as suffix in the name, e.g. [ebus-v3_lolin32_factory.bin](dist/ebus-v3_lolin32_factory.bin). This
 contains all relevant parts to get the device up and running.
 
 
@@ -61,7 +83,7 @@ Welcome to eBUS adapter 3, build 20211030
 Configured as WIFI access point EBUS without password.
 For configuration with web browser, connect to this WIFI and open http://192.168.4.1/
 Entering configuration mode.
-Chip ID: ********
+Chip ID: ********, d1mini
 Hostname: ebus-******
 
 Configuration (new):
@@ -123,7 +145,7 @@ If you want to change the initial PIN settings, just use the last column for tha
 [Configuration](http://192.168.4.1/config) page and press "Save & Reset" to save the changes and reboot the device.
 
 Support for 1-wire temperature sensors is experimental, so handle with care. Once a PIN is configured as sensor PIN, the
-connected sensors are scanned and sensor data can be retrieved with the "[/sensor](http://192.168.4.1/pins)" URL in JSON
+connected sensors are scanned and sensor data can be retrieved with the "[/sensor](http://192.168.4.1/sensor)" URL in JSON
 format and show up in the HTML frontend.
 
 ## LED
