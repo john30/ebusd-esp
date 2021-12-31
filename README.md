@@ -11,29 +11,29 @@ require flashing the corresponding binary:
 
 * [Wemos D1 mini](https://www.wemos.cc/en/latest/d1/d1_mini.html):  
   * flash size: 4MB
-  * firmware: [d1mini](dist/d1mini.bin)
+  * firmware: [d1mini](dist/ebus-v3_d1mini.bin)
 * [Wemos D1 mini Lite](https://www.wemos.cc/en/latest/d1/d1_mini_lite.html):  
   * flash size: 1MB
-  * firmware: [d1mini_lite_1m](dist/d1mini_lite_1m.bin)
+  * firmware: [d1mini_lite_1m](dist/ebus-v3_d1mini_lite_1m.bin)
 * [Wemos D1 mini Pro](https://www.wemos.cc/en/latest/d1/d1_mini_pro.html):  
   * flash size: 16MB
-  * firmware: [d1mini_pro_16m](dist/d1mini_pro_16m.bin)
+  * firmware: [d1mini_pro_16m](dist/ebus-v3_d1mini_pro_16m.bin)
   * attention: some boards are sold as "pro" but are actually equipped with 4MB flash only. These need to be flashed
-    with the [d1mini](dist/d1mini.bin) variant instead of the pro!
+    with the [d1mini](dist/ebus-v3_d1mini.bin) variant instead of the pro!
 * [NodeMcu v1.0](https://github.com/nodemcu/nodemcu-devkit-v1.0):  
   * flash size: 4MB
-  * firmware: [nodemcu1](dist/nodemcu1.bin)
+  * firmware: [nodemcu1](dist/ebus-v3_nodemcu1.bin)
 * [ESP-01S](http://www.ai-thinker.com/pro_view-60.html):
   * flash size: 1MB
-  * firmware: [esp01](dist/esp01.bin)
+  * firmware: [esp01](dist/ebus-v3_esp01.bin)
 * [Wemos D32](https://www.wemos.cc/en/latest/d32/d32.html) (aka Lolin32):  
   * flash size: 4MB
-  * firmware: [lolin32](dist/lolin32.bin)
-  * first time flashing: see [note on "factory" image below](README.md#flashing-with-esptool)
+  * firmware: [lolin32](dist/ebus-v3_lolin32.bin)
+  * first time flashing: use [factory image](dist/ebus-v3_lolin32_factory.bin), see [note on "factory" image below](README.md#flashing-with-esptool)
 * [D1 mini 32](https://forum.mhetlive.com/topic/8/mh-et-live-minikit-for-esp32):
   * flash size: 4MB
-  * firmware: [d1mini32](dist/d1mini32.bin)
-  * first time flashing: see [note on "factory" image below](README.md#flashing-with-esptool)
+  * firmware: [d1mini32](dist/ebus-v3_d1mini32.bin)
+  * first time flashing: use [factory image](dist/ebus-v3_d1mini32_factory.bin), see [note on "factory" image below](README.md#flashing-with-esptool)
 
 Other boards might work as well, but were not tested.
 
