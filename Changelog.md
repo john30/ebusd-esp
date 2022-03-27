@@ -1,3 +1,8 @@
+# build 20220327
+
+* fix: current state of adapter 3 ready port shown in UI
+
+
 # build 20211226
 
 * chore: show board and flash ID
