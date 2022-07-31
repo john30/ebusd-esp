@@ -54,6 +54,17 @@ Using that tool, simply flash the right binary from the
 [dist folder](https://github.com/john30/ebusd-esp/tree/master/dist) to the ESP board.
 Erasing the flash before might be a good idea (if you don't want to keep the settings).
 
+### Flashing with esptool.py
+For using the esptool.py either an OS with python installed is needed (e.g. Windows with Python 3.8 installed), or it
+needs to be made available by e.g. using docker or WSL. With WSL it is a bit tricky to get hold of the USB port of the
+Windows host but not impossible (e.g. by using [usbipd-win](https://github.com/dorssel/usbipd-win)).
+
+The image can then be flashed using the [flash.sh](./flash.sh) script which mainly does the following:
+* takes one optional argument with the name of the image file to flash (e.g. `./dist/ebusd-v3_d1mini.bin` which is the default as well)
+* erases the flash completely (for ESP32: only if you pass one of the `...32_factory.bin` images as argument)
+* fills or resets the init data areas appropriately
+* flashes the image itself
+
 ### Flashing with NodeMCU Flasher
 For the [NodeMCU Flasher](https://github.com/nodemcu/nodemcu-flasher), first pick the right file for your board from the
 [dist folder](https://github.com/john30/ebusd-esp/tree/master/dist) and set the address to 0x0000:  
