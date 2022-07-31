@@ -10,27 +10,34 @@ First of all, you need to flash the firmware to the ESP board. Currently, the fo
 require flashing the corresponding binary:
 
 * [Wemos D1 mini](https://www.wemos.cc/en/latest/d1/d1_mini.html):  
+  * chip: ESP8266
   * flash size: 4MB
   * firmware: [d1mini](dist/ebus-v3_d1mini.bin)
 * [Wemos D1 mini Lite](https://www.wemos.cc/en/latest/d1/d1_mini_lite.html):  
+  * chip: ESP8285
   * flash size: 1MB
   * firmware: [d1mini_lite_1m](dist/ebus-v3_d1mini_lite_1m.bin)
 * [Wemos D1 mini Pro](https://www.wemos.cc/en/latest/d1/d1_mini_pro.html):  
+  * chip: ESP8266
   * flash size: 16MB
   * firmware: [d1mini_pro_16m](dist/ebus-v3_d1mini_pro_16m.bin)
   * attention: some boards are sold as "pro" but are actually equipped with 4MB flash only. These need to be flashed
     with the [d1mini](dist/ebus-v3_d1mini.bin) variant instead of the pro!
 * [NodeMcu v1.0](https://github.com/nodemcu/nodemcu-devkit-v1.0):  
+  * chip: ESP8266
   * flash size: 4MB
   * firmware: [nodemcu1](dist/ebus-v3_nodemcu1.bin)
 * [ESP-01S](http://www.ai-thinker.com/pro_view-60.html):
+  * chip: ESP8266
   * flash size: 1MB
   * firmware: [esp01](dist/ebus-v3_esp01.bin)
 * [Wemos D32](https://www.wemos.cc/en/latest/d32/d32.html) (aka Lolin32):  
+  * chip: ESP-WROOM-32
   * flash size: 4MB
   * firmware: [lolin32](dist/ebus-v3_lolin32.bin)
   * first time flashing: use [factory image](dist/ebus-v3_lolin32_factory.bin), see [note on "factory" image below](README.md#flashing-with-esptool)
 * [D1 mini 32](https://forum.mhetlive.com/topic/8/mh-et-live-minikit-for-esp32):
+  * chip: ESP-WROOM-32
   * flash size: 4MB
   * firmware: [d1mini32](dist/ebus-v3_d1mini32.bin)
   * first time flashing: use [factory image](dist/ebus-v3_d1mini32_factory.bin), see [note on "factory" image below](README.md#flashing-with-esptool)
@@ -38,10 +45,10 @@ require flashing the corresponding binary:
 Other boards might work as well, but were not tested.
 
 In order to flash the firmware to the ESP board, you need one of the tools mentioned on
-[NodeMCU](https://nodemcu.readthedocs.io/en/master/flash/#tool-overview), e.g.
-[NodeMCU Flasher](https://github.com/nodemcu/nodemcu-flasher),
-[esptool.py](https://nodemcu.readthedocs.io/en/master/en/flash/#esptoolpy), or
-[esptool](https://github.com/igrr/esptool-ck/releases).
+[NodeMCU](https://nodemcu.readthedocs.io/en/release/flash/#tool-overview), e.g.:
+* [esptool.py](https://nodemcu.readthedocs.io/en/release/flash/#esptoolpy),
+* [NodeMCU Flasher](https://github.com/nodemcu/nodemcu-flasher), or
+* [esptool](https://github.com/igrr/esptool-ck/releases).
 
 Using that tool, simply flash the right binary from the
 [dist folder](https://github.com/john30/ebusd-esp/tree/master/dist) to the ESP board.
@@ -59,12 +66,12 @@ And finally, start the upload by pressing Flash:
 ![flash](flashop.png)
 
 ### Flashing with esptool
-For the esptool flasher, just run it on command line like this (replacing COM4 with the corresponding port on Windows or
-the right serial device like /dev/ttyUSB0 under Linux, and replacing ebus-v3_d1mini.bin with the right filename for your
-board):  
+For the [esptool](https://github.com/igrr/esptool-ck/releases) flasher, just run it on command line like this
+(replacing COM4 with the corresponding port on Windows or the right serial device like /dev/ttyUSB0 under Linux, and
+replacing ebus-v3_d1mini.bin with the right filename for your board):  
 `esptool -cp COM4 -bm dio -cd nodemcu -cb 921600 -ce -cf ebus-v3_d1mini.bin`
 
-***Note for ESP32 images:***  
+### Flashing ESP32 images
 For all ESP32 images, the first flashing of a blank or otherwise differently flashed device has to be done with the image
 having "_factory" as suffix in the name, e.g. [ebus-v3_lolin32_factory.bin](dist/ebus-v3_lolin32_factory.bin). This
 contains all relevant parts to get the device up and running.
