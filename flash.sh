@@ -8,6 +8,14 @@ home=${HOMEDIR:-~}
 eraseall='--erase-all'
 speed=2000000
 tooldir=$home/.platformio/packages/tool-esptoolpy
+if [[ ! -d "$tooldir" ]]; then
+  echo "missing platformio tool-esptoolpy, please check the folder $tooldir" >&2
+  exit 1
+fi
+if ! "$tooldir/esptool.py" --help >/dev/null 2>/dev/null; then
+  echo "platformio tool-esptoolpy is not executable, please check python installation for execution of $tooldir/esptool.py" >&2
+  exit 1
+fi
 if [[ "${fw%32_factory.bin}" != "$fw" ]] || [[ "${fw%32.bin}" != "$fw" ]]; then
   # ESP32 firmware
   if [[ "${fw%32_factory.bin}" == "$fw" ]]; then
