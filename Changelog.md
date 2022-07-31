@@ -1,3 +1,11 @@
+# build 20220731
+
+* feat: set WIFI power to at least 17dBm
+* feat: add high-speed serial mode for adapter 3
+* chore: update SoftwareSerial to 6.16.1
+* chore: some smaller UI enhancements
+
+
 # build 20220327
 
 * fix: current state of adapter 3 ready port shown in UI
