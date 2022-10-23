@@ -1,3 +1,17 @@
+# build 20221023
+
+* feat: support adapter 3.1
+* feat: show jumper settings for adapter 3.* in UI
+* feat: set WIFI high power to 19.5dBm for non-32 targets
+* feat: add configurable AP mode
+* feat: add logging
+* feat: require 2x enter for serial config mode
+* fix: allow up to 32 chars SSID
+* fix: require at least 8 chars password
+* chore: some smaller UI enhancements
+* feat: update ESP32 platform
+
+
 # build 20220731
 
 * feat: set WIFI power to at least 17dBm

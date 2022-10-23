@@ -97,11 +97,11 @@ Simply connect with e.g. Putty to the COM port at 115200 Baud (8N1) after connec
 will see the following configuration options:
 
 ```
-Welcome to eBUS adapter 3, build 20211226
+Welcome to eBUS adapter 3, build 20221023
 Configured as WIFI access point EBUS without password.
 For configuration with web browser, connect to this WIFI and open http://192.168.4.1/
-Entering configuration mode.
-Chip ID: ********, d1mini
+Entering configuration mode (4).
+Chip ID: ********, d1mini@80
 Hostname: ebus-******
 
 Configuration (new):
@@ -111,7 +111,7 @@ Configuration (new):
  w. WIFI power: normal
  W. WIFI phy mode: 11N
  4. WIFI hostname: ebus-******
- 5. eBUS RX+TX PINs: Adapter 3 RX+TX (GPIO3+1)
+ 5. eBUS RX+TX PINs: Adapter 3.1 RX+TX high-speed (if enhanced) =GPIO3+1
  6. ebusd connection: enhanced on port 9999
  7. HTTP TCP port: 80
  8. LED PINs: RX:disabled, TX:disabled
@@ -124,6 +124,7 @@ Configuration (new):
  e. Dump EEPROM content
  f. Load factory settings
  F. Factory reset (i.e. erase EEPROM)
+ l. Log lines
  o. OTA enabled: waiting
  r. Reboot (without saving)
  0. Save configuration and reboot
