@@ -153,8 +153,13 @@ though) by clicking on [Configuration](http://192.168.4.1/config):
 
 [![Web Configuration](webcfg.png)](http://192.168.4.1/config)
 
+When configuring for an eBUS adapter 3, the necessary jumpers will be shown. Please make sure to set them accordingly.
+
 Use "Check & Update" to check your input and if no error message appeared and after you have verified the correctness of
 the values, simply press "Save & Reset" to save the changes and reboot the device.
+
+The red "config mode" pill in the UI changes to a green "running" after reboot and the "new" pill at the "Configuration"
+tab will be gone.
 
 It is also possible to change PINs directly on the [PINs](http://192.168.4.1/pins) page:
 
