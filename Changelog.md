@@ -1,3 +1,10 @@
+# build 20221105
+
+* feat: add links to firmware download and adapter docs
+* fix: load all config items from eeprom even if WIFI was not configured completely
+* feat: add passthrough mode for flashing/configuring adapter 3 PIC remotely
+
+
 # build 20221023
 
 * feat: support adapter 3.1
