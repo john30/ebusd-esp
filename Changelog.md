@@ -1,3 +1,13 @@
+# build 20221215
+
+* feat: allow start without saving settings
+* fix: optimize initial WIFI connection and disable sleep
+* fix: some AP mode display settings
+* feat: more Javascript for better UI experience
+* feat: add ebuspicloader settings
+* fix: unnecessarily separated TCP packets to host
+
+
 # build 20221105
 
 * feat: add links to firmware download and adapter docs

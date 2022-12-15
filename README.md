@@ -2,7 +2,7 @@
 Firmware for ESP8266, ESP8285, and ESP32 allowing eBUS communication for ebusd with lowest possible latency.
 
 ## History
-For a history of version and changes made therein, see the [change log](Changelog.md).
+For a history of versions and changes made therein, see the [change log](Changelog.md).
 
 
 ## Flashing
@@ -44,8 +44,7 @@ require flashing the corresponding binary:
 
 Other boards might work as well, but were not tested.
 
-In order to flash the firmware to the ESP board, you need one of the tools mentioned on
-[NodeMCU](https://nodemcu.readthedocs.io/en/release/flash/#tool-overview), e.g.:
+In order to flash the firmware to the ESP board, you need one of these tools:
 * [esptool.py](https://nodemcu.readthedocs.io/en/release/flash/#esptoolpy),
 * [NodeMCU Flasher](https://github.com/nodemcu/nodemcu-flasher), or
 * [esptool](https://github.com/igrr/esptool-ck/releases).
@@ -97,7 +96,7 @@ Simply connect with e.g. Putty to the COM port at 115200 Baud (8N1) after connec
 will see the following configuration options:
 
 ```
-Welcome to eBUS adapter 3, build 20221023
+Welcome to eBUS adapter 3, build 20221215
 Configured as WIFI access point EBUS without password.
 For configuration with web browser, connect to this WIFI and open http://192.168.4.1/
 Entering configuration mode (4).
@@ -107,9 +106,9 @@ Hostname: ebus-******
 Configuration (new):
  1. WIFI SSID: EBUS
  2. WIFI secret:
- 3. WIFI IP address: DHCP (failed: disconnected, reason: 1)
- w. WIFI power: normal
- W. WIFI phy mode: 11N
+ 3. WIFI IP address: DHCP (not started yet)
+ w. WIFI power: normal (17 dBm)
+ W. WIFI phy mode: 802.11 g/b/n = Wi-Fi 4
  4. WIFI hostname: ebus-******
  5. eBUS RX+TX PINs: Adapter 3.1 RX+TX high-speed (if enhanced) =GPIO3+1
  6. ebusd connection: enhanced on port 9999
@@ -127,7 +126,8 @@ Configuration (new):
  l. Log lines
  o. OTA enabled: waiting
  r. Reboot (without saving)
- 0. Save configuration and reboot
+ R. Run (without saving)
+ 0. Save and Reboot
 
 Enter your choice:
 ```
@@ -153,10 +153,15 @@ though) by clicking on [Configuration](http://192.168.4.1/config):
 
 [![Web Configuration](webcfg.png)](http://192.168.4.1/config)
 
-When configuring for an eBUS adapter 3, the necessary jumpers will be shown. Please make sure to set them accordingly.
+When configuring for an eBUS adapter 3, the necessary
+[ebuspicloader](https://github.com/john30/ebusd/blob/master/src/tools/README.md)
+settings will be shown in the appropriate section. Please make sure to set them accordingly.
+For older PIC firmware versions, the hardware jumpers are shown as well, but there are obsolete now.
 
 Use "Check & Update" to check your input and if no error message appeared and after you have verified the correctness of
-the values, simply press "Save & Reset" to save the changes and reboot the device.
+the values, simply press "Save & Reboot" to save the changes and reboot the device.
+
+If you're unsure with the settings, you can press "Run (without saving)" to check them before saving.
 
 The red "config mode" pill in the UI changes to a green "running" after reboot and the "new" pill at the "Configuration"
 tab will be gone.
@@ -180,13 +185,13 @@ onboard LED).
 
 The LED status after the reset depends on the selected eBUS RX+TX PIN mode.
 
-### LED in hardware UART (direct or swapped) and mixed RX + software D2 eBUS RX+TX PIN mode
+### LED in hardware RX+TX UART and mixed RX + software D2 eBUS RX+TX PIN mode
 When in one of these eBUS RX+TX PIN modes, the LED provides the following feedback:
 - After reset, it blinks two times slowly to indicate it was (re-)started.
-- While establishing the WIFI connection, it dims down from on several times up to 5 seconds.
+- While establishing the WIFI connection, it dims down from on several times up to 8 seconds.
 - When the WIFI connection was successfully established, it is switched off for around 5 seconds.
-  During that time (when no eBUS signal was detected), sending any key to the serial port makes the firmware go to
-  serial configuration mode.
+  During that time and when no eBUS signal was detected, sending the enter key twice on the serial port makes the
+  firmware go to serial configuration mode.
 - When an ebusd instance has connected successfully to the TCP/UDP port and there is a steady eBUS signal, then the LED
   is turned on permanently either at full brightness (if ebusd regularly sends something to the eBUS) or less brightness
   (if ebusd does not write to the eBUS).
@@ -206,6 +211,16 @@ current status of all PINs in JSON format including the analog input PIN.
 E.g. in order to set D0 (GPIO16) to LOW, you could use the URL
 [http://192.168.4.1/pin?pin=0&mode=l](http://192.168.4.1/pin?pin=0&mode=l), and using
 [http://192.168.4.1/pin?pin=0&mode=h](http://192.168.4.1/pin?pin=0&mode=h) for HIGH.
+
+
+## Log
+The "Log" tab will show the last log entries (up to 64) and is more for debugging.
+
+
+## PIC
+When configured for one of the eBUS adapter 3 modes, a "PIC" tab appears that allows enabling a pass-through mode to the
+PIC which can be used to change the settings or update the PIC firmware using
+[ebuspicloader](https://github.com/john30/ebusd/blob/master/src/tools/README.md).
 
 
 ## Firmware update
