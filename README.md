@@ -156,7 +156,7 @@ though) by clicking on [Configuration](http://192.168.4.1/config):
 When configuring for an eBUS adapter 3, the necessary
 [ebuspicloader](https://github.com/john30/ebusd/blob/master/src/tools/README.md)
 settings will be shown in the appropriate section. Please make sure to set them accordingly.
-For older PIC firmware versions, the hardware jumpers are shown as well, but there are obsolete now.
+For older PIC firmware versions, the hardware jumpers are shown as well, but these are obsolete now.
 
 Use "Check & Update" to check your input and if no error message appeared and after you have verified the correctness of
 the values, simply press "Save & Reboot" to save the changes and reboot the device.
